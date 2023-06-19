@@ -1,0 +1,17 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-margin-top">
+    <h1>Shared Shopping Lists</h1>
+    <h3>This is a tool to create and manage shopping lists</h3> </br>
+    <a class="uk-button uk-button-primary uk-button-large" href="/lists">Get Started</a>
+</div>
+<div class="uk-card uk-card-body uk-card-default uk-margin-top">
+    <h3 class="uk-card-title">Statistics</h3>
+    <% if (it.statistics.listCount > 0) {%>
+        <ul class="uk-list">
+            <li>Shopping lists: <%= it.statistics.listCount %></li>
+            <li>Shopping list items: <%= it.statistics.itemCount %></li>
+        </ul>   
+    <% } else { %>
+        <p>No shopping lists yet.</p>
+    <% } %>
+</div>

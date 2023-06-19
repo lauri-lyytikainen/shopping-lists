@@ -1,0 +1,39 @@
+<% layout("./layouts/layout.eta") %>
+<div class="uk-card uk-card-body uk-card-default uk-margin-top">
+    <h2 class="uk-card-title">Add a new Shopping List</h2>
+    <div>
+        <form method="POST" action="/lists">
+            <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+                <input class="uk-input" type="text" name="shoppingListName" placeholder="Name"/>
+            </div>
+            <input class="uk-button uk-button-primary uk-input" type="submit" value="Add"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<% if (it.shoppingLists.length > 0) {%>
+    <h2> Or choose from an excisting one: </h2>
+    <table class="uk-table uk-table-striped uk-table-middle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th class="uk-table-shrink">Deactivate</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% it.shoppingLists.forEach((list) => { %>
+            <tr>
+                <td><a href="/lists/<%= list.id %>"><%= list.name %></a></td>
+                <td>
+                    <form method="POST" action="/lists/<%= list.id %>/deactivate">
+                        <input class="uk-button uk-button-danger uk-input" type="submit" value="Deactivate list!"/>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>No shopping lists yet.</p>
+<% } %>

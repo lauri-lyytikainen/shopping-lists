@@ -1,0 +1,52 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="uk-margin-top"> <%= it.name %> </h1>
+<div class="uk-card uk-card-body uk-card-default uk-margin-top">
+    <h3 class="uk-card-title">Add a new item to <b><%= it.name %></b></h3>
+    <div>
+        <form method="POST" action="/lists/<%= it.id %>/items">
+            <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+                <input class="uk-input" type="text" name="name" placeholder="Item Name"/>
+            </div>
+            <input class="uk-button uk-button-primary uk-input" type="submit" value="Add"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<% if (it.items.length > 0) {%>
+    <h2> Current Items: </h2>
+    <table class="uk-table uk-table-striped uk-table-middle ">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="uk-table-shrink">Collect</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% it.items.forEach((item) => { %>
+            <tr>
+                <td>
+                    <% if (item.collected) { %>
+                        <del> <%= item.name %> </del>
+                    <% } else { %>
+                        <%= item.name %>
+                    <% } %>
+                </td>
+                <td> 
+                    <% if (item.collected) { %>
+                        Collected!
+                    <% } else { %>
+                        <form method="POST" action="/lists/<%= item.shopping_list_id %>/items/<%= item.id%>/collect">
+                        <input class="uk-button uk-button-primary uk-input" type="submit" value="Mark collected!"/>
+                    </form>
+                    <% } %>
+                    
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% } else { %>
+    <p> Add items to see them here! </p>
+<% }%>

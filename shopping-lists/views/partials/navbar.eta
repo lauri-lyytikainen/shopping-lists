@@ -1,0 +1,19 @@
+<nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <a href="/" class="uk-navbar-item uk-logo">
+                        <div>
+                            Shopping List
+                            <div class="uk-navbar-subtitle">
+                                Main Page
+                            </div>
+                        </div>
+                    </a>
+                    <li><a href="/lists">Lists</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
