@@ -22,3 +22,13 @@ The e2e tests can be ran using the following command:
 ```
 $ docker-compose run --entrypoint=npx e2e-playwright playwright test && docker-compose rm -sf
 ```
+
+## Project structure
+
+The project is structured in a way that the three tier 
+architecture is followed. Eta views, controllers, and 
+services are separated into their own folders. The 
+database is also separated into its own folder. The 
+database schemas and migrations are handled by flyway. 
+The e2e tests are located in the `e2e-playwright` 
+folder.
