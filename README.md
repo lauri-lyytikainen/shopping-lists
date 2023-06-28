@@ -7,6 +7,8 @@ The project is hosted at: https://shopping-lists-6e9v.onrender.com
 
 This project is a web application that provides its users with shared shopping lists that can be edited by multiple users at the same time. The application is built using deno, eta, and postgresql inside Docker containers. It is hosted on Render.
 
+For styling it uses UIKit.
+
 
 ## Running the application
 

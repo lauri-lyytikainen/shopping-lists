@@ -18,5 +18,4 @@ const collectItem = async (request) => {
     return requestUtils.redirectTo(`/lists/${ listId }`);
 };
 
-
 export { addItem, collectItem };

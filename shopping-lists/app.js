@@ -35,7 +35,6 @@ const handleRequest = async (request) => {
   } else {
     return requestUtils.redirectTo("/");
   }
-    
 };
 
 serve(handleRequest, { port: 7777 });

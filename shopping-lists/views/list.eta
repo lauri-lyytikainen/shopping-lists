@@ -6,10 +6,10 @@
     <div>
         <form method="POST" action="/lists/<%= it.id %>/items">
             <fieldset class="uk-fieldset">
-            <div class="uk-margin">
-                <input class="uk-input" type="text" name="name" placeholder="Item Name"/>
-            </div>
-            <input class="uk-button uk-button-primary uk-input" type="submit" value="Add"/>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="name" placeholder="Item Name"/>
+                </div>
+                <input class="uk-button uk-button-primary uk-input" type="submit" value="Add"/>
             </fieldset>
         </form>
     </div>
@@ -38,10 +38,9 @@
                         Collected!
                     <% } else { %>
                         <form method="POST" action="/lists/<%= item.shopping_list_id %>/items/<%= item.id%>/collect">
-                        <input class="uk-button uk-button-primary uk-input" type="submit" value="Mark collected!"/>
-                    </form>
+                            <input class="uk-button uk-button-primary uk-input" type="submit" value="Mark collected!"/>
+                        </form>
                     <% } %>
-                    
                 </td>
             </tr>
         <% }) %>

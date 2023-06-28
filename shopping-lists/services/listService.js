@@ -7,7 +7,6 @@ const addNewShoppingList = async (name) => {
 const getAllActiveShoppingLists = async () => {
     const res = await executeQuery("SELECT * FROM shopping_lists WHERE active = TRUE");
     return res.rows;
-
 };
 
 const deactivateShoppingList = async (id) => {
@@ -23,9 +22,7 @@ const getShoppingListName = async (id) => {
 };
 
 const getShoppingListItems = async (id) => {
-    // const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id", {id: id});
-    // Also sort alphabetically
-    const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id ORDER BY collected, name ASC", {id: id});    return res.rows;
+    const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id ORDER BY collected, name ASC", {id: id});
     return res.rows;
 };
 
