@@ -1,6 +1,7 @@
 # Project 1: Shared shopping list
 
-The project is hosted at: https://shopping-lists-6e9v.onrender.com/lists
+The project is hosted at: https://shopping-lists-6e9v.onrender.com
+> The site may load slowly because a free tier but once it starts up it works normally
 
 ## About the project
 
