@@ -25,7 +25,7 @@ const getShoppingListName = async (id) => {
 const getShoppingListItems = async (id) => {
     // const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id", {id: id});
     // Also sort alphabetically
-    const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id ORDER BY name ASC", {id: id});    return res.rows;
+    const res = await executeQuery("SELECT * FROM shopping_list_items WHERE shopping_list_id = $id ORDER BY collected, name ASC", {id: id});    return res.rows;
     return res.rows;
 };
 
