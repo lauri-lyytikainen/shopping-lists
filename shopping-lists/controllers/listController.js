@@ -18,7 +18,7 @@ const viewLists = async () => {
 
 const addNewShoppingList = async (request) => {
     const formData = await request.formData();
-    const name = formData.get("shoppingListName");
+    const name = formData.get("name");
     await listService.addNewShoppingList(name);
     return requestUtils.redirectTo("/lists");
 };
