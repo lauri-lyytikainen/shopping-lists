@@ -23,7 +23,7 @@ test ("Lists page has correct heading, links and text", async ({ page }) => {
 });
 
 test ("Adding a new list works", async ({ page }) => {
-  const response = await page.goto("/lists");
+  await page.goto("/lists");
   const random = Math.floor(Math.random() * 1000);
   const name = `Test List ${random}`;
   await page.locator('input[type=text]').fill(name);
@@ -32,7 +32,7 @@ test ("Adding a new list works", async ({ page }) => {
 });
 
 test ("Adding a new item works", async ({ page }) => {
-  const response = await page.goto("/lists");
+  await page.goto("/lists");
   const random = Math.floor(Math.random() * 1000);
   const name = `Test List ${random}`;
   await page.locator('input[type=text]').fill(name);
@@ -47,7 +47,7 @@ test ("Adding a new item works", async ({ page }) => {
 });
 
 test ("Checking off a list item works", async ({ page }) => {
-  const response = await page.goto("/lists");
+  await page.goto("/lists");
   const random = Math.floor(Math.random() * 1000);
   const name = `Test List ${random}`;
   await page.locator('input[type=text]').fill(name);
@@ -64,7 +64,7 @@ test ("Checking off a list item works", async ({ page }) => {
 });
 
 test ("Deleting a list works", async ({ page }) => {
-  const response = await page.goto("/lists");
+  await page.goto("/lists");
   const random = Math.floor(Math.random() * 1000);
   const name = `Test List ${random}`;
   await page.locator('input[type=text]').fill(name);
@@ -76,7 +76,7 @@ test ("Deleting a list works", async ({ page }) => {
 });
 
 test ("Statistics work", async ({ page }) => {
-  const response = await page.goto("/");
+  await page.goto("/");
   await expect(page.locator('.uk-card ul li')).toHaveText(["Shopping lists: 4", "Shopping list items: 2"]);
 
 });
